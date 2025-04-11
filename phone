@@ -1,0 +1,25 @@
+
+
+if [ $# -eq 0 ] 
+then 
+ echo nothing
+ exit 0 
+fi
+
+list="$1"
+for arg in "$@"
+	do
+	list="${list}|${arg}"
+	done
+		 
+
+egrep -i "$list" mydata.txt > tmp
+
+
+awk -f display.awk tmp
+ 
+
+
+
+
+                         
